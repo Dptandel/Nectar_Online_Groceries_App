@@ -1,5 +1,6 @@
 package com.app.nectar.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,6 +32,6 @@ class ParentItemAdapter(private val parentItemList: List<ParentItem>) :
         holder.childRecyclerView.setHasFixedSize(true)
         holder.childRecyclerView.layoutManager =
             LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
-        holder.childRecyclerView.adapter = ChildItemAdapter(parentItem.childItemList)
+        holder.childRecyclerView.adapter = ChildItemAdapter(holder.itemView.context,parentItem.childItemList)
     }
 }

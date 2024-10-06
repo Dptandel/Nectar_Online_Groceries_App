@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/cartImgItem"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/cart_item_1"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvCartItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Bell Pepper Red"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cartImgItem"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/cancelItem"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_cancel"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCartItemName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvCartItemName" />
+
+    <TextView
+        android:id="@+id/tvCartItemQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1kg, Price"
+        android:textColor="#7C7C7C"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/tvCartItemName"
+        app:layout_constraintTop_toBottomOf="@+id/tvCartItemName" />
+
+    <ImageButton
+        android:id="@+id/btnDecrement"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/count_bg"
+        android:src="@drawable/ic_dec"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvCartItemQuantity"
+        app:layout_constraintTop_toBottomOf="@+id/tvCartItemQuantity" />
+
+    <TextView
+        android:id="@+id/tvItemCartQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDecrement"
+        app:layout_constraintStart_toEndOf="@+id/btnDecrement"
+        app:layout_constraintTop_toTopOf="@+id/btnDecrement" />
+
+    <ImageButton
+        android:id="@+id/btnIncrement"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/count_bg"
+        android:src="@drawable/ic_inc"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDecrement"
+        app:layout_constraintStart_toEndOf="@+id/tvItemCartQuantity"
+        app:layout_constraintTop_toTopOf="@+id/btnDecrement" />
+
+    <TextView
+        android:id="@+id/tvCartItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$4.99"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnIncrement"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnIncrement" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

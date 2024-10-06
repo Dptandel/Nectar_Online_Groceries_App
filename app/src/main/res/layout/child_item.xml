@@ -2,8 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="175dp"
     android:layout_height="250dp"
-    android:backgroundTint="@color/white"
-    android:orientation="vertical"
+    android:id="@+id/childItemCardView"
     android:layout_margin="8dp"
     app:cardCornerRadius="12dp">
 
@@ -11,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center_vertical"
         android:padding="16dp">
 
         <ImageView
@@ -24,7 +24,7 @@
             android:id="@+id/tvItemName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="18dp"
             android:text="Organic Bananas"
             android:textColor="#181725"
             android:textSize="16sp"
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="18dp"
             android:orientation="horizontal">
 
             <TextView
