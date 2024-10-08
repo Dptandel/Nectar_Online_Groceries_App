@@ -1,16 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="24dp"
     tools:context=".fragments.AccountFragment">
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="36dp"
+        android:scaleType="centerCrop"
+        app:shapeAppearance="@style/circleImageView"
+        android:src="@drawable/profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
+        android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Dharmin Tandel"
+        android:textColor="#53B175"
+        android:textSize="28sp"
         android:textStyle="bold"
-        android:textSize="36sp"
-        android:layout_centerInParent="true"
-        android:text="Account Fragment" />
+        app:layout_constraintEnd_toEndOf="@+id/ivProfile"
+        app:layout_constraintStart_toStartOf="@+id/ivProfile"
+        app:layout_constraintTop_toBottomOf="@+id/ivProfile" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/tvBio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Customer"
+        android:textColor="#708077"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvName"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <TextView
+        android:id="@+id/tvEmailID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Email"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBio" />
+
+    <EditText
+        android:id="@+id/edtEmailID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="dharmin@gmail.com"
+        android:background="@drawable/edit_text_bg"
+        android:drawableEnd="@drawable/ic_email"
+        android:padding="16dp"
+        android:textColor="#708077"
+        app:layout_constraintStart_toStartOf="@+id/tvEmailID"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailID" />
+
+    <TextView
+        android:id="@+id/tvMobileNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Mobile Number"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmailID" />
+
+    <EditText
+        android:id="@+id/edtMobileNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edit_text_bg"
+        android:drawableEnd="@drawable/ic_phone"
+        android:padding="16dp"
+        android:hint="+91 9328356264"
+        android:textColor="#708077"
+        app:layout_constraintStart_toStartOf="@+id/tvMobileNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tvMobileNumber" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

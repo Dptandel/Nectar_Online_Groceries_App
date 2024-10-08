@@ -20,6 +20,7 @@
         style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
         android:background="@color/white"
         android:id="@+id/bottomNav"
+        app:labelVisibilityMode="labeled"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingVertical="8dp"
