@@ -50,4 +50,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //circle Indicator
+    implementation ("me.relex:circleindicator:2.1.6")
+
+    //glide
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
 }

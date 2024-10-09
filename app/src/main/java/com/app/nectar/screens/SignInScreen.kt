@@ -22,6 +22,7 @@ class SignInScreen : AppCompatActivity() {
 
         binding.btnFacebookConnect.setOnClickListener {
             // Handle Facebook sign-in
+            startActivity(Intent(this, MainScreen::class.java))
         }
     }
 }
