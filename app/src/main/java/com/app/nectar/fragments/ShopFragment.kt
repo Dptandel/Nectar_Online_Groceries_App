@@ -7,10 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.nectar.R
-import com.app.nectar.adapters.BannerSliderAdapter
 import com.app.nectar.adapters.ParentItemAdapter
 import com.app.nectar.databinding.FragmentShopBinding
-import com.app.nectar.models.BannerItem
 import com.app.nectar.models.ChildItem
 import com.app.nectar.models.ParentItem
 import me.relex.circleindicator.CircleIndicator
@@ -20,14 +18,6 @@ class ShopFragment : Fragment() {
     private lateinit var binding: FragmentShopBinding
 
     private val parentItemList = ArrayList<ParentItem>()
-
-    private lateinit var bannerAdapter : BannerSliderAdapter
-
-    private val bannerItemList : MutableList<BannerItem> = mutableListOf()
-
-    private lateinit var indicator: CircleIndicator
-
-    private var banner: BannerItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,13 +30,6 @@ class ShopFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentShopBinding.inflate(inflater, container, false)
 
-        //bannerImages
-        bannerItemList.apply {
-            add(BannerItem(R.drawable.home_banner))
-            add(BannerItem(R.drawable.home_banner))
-            add(BannerItem(R.drawable.home_banner))
-        }
-
         binding.parentRecyclerView.layoutManager = LinearLayoutManager(context)
 
         addDataToList()
@@ -55,17 +38,6 @@ class ShopFragment : Fragment() {
         binding.parentRecyclerView.adapter = parentAdapter
 
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        banner?.image.apply {
-            bannerAdapter = BannerSliderAdapter(requireContext(), bannerItemList)
-            binding.viewpager.adapter = bannerAdapter
-//            indicator = requireView().findViewById(R.id.indicator)!!
-            binding.indicator.setViewPager(binding.viewpager)
-        }
     }
 
     private fun addDataToList() {

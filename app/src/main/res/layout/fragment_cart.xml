@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvCartTitle" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnGetStarted"
+        android:id="@+id/btnGotoCheckout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/ob_button_bg"

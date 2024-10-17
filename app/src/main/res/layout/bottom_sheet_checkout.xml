@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:background="@drawable/bottom_sheet_bg"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvCheckout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checkout"
+            android:textColor="#181725"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#181725" />
+
+        <TextView
+            android:id="@+id/tvDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:padding="8dp"
+            android:text="Delivery"
+            android:textColor="#7C7C7C"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvCheckout"
+            app:layout_constraintTop_toBottomOf="@+id/tvCheckout" />
+
+        <TextView
+            android:id="@+id/tvSelectMethod"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="end"
+            android:padding="8dp"
+            android:text="Select Method"
+            android:textColor="#181725"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDelivery"
+            app:layout_constraintEnd_toStartOf="@+id/ivSelectMethod"
+            app:layout_constraintStart_toEndOf="@+id/tvDelivery"
+            app:layout_constraintTop_toTopOf="@+id/tvDelivery" />
+
+        <ImageView
+            android:id="@+id/ivSelectMethod"
+            android:layout_width="36dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSelectMethod"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvSelectMethod" />
+
+        <TextView
+            android:id="@+id/tvPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:text="Payment"
+            android:textColor="#7C7C7C"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvDelivery"
+            app:layout_constraintTop_toBottomOf="@+id/tvDelivery" />
+
+        <ImageView
+            android:id="@+id/ivPaymentCard"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:padding="8dp"
+            android:src="@drawable/payment_card"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPayment"
+            app:layout_constraintEnd_toStartOf="@+id/ivSelectMethod"
+            app:layout_constraintTop_toTopOf="@+id/tvPayment" />
+
+        <ImageView
+            android:id="@+id/ivSelectPayment"
+            android:layout_width="36dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/ivPaymentCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivPaymentCard" />
+
+        <TextView
+            android:id="@+id/tvPromoCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:text="Promo Code"
+            android:textColor="#7C7C7C"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvPayment"
+            app:layout_constraintTop_toBottomOf="@+id/tvPayment" />
+
+        <TextView
+            android:id="@+id/tvPickDiscount"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="end"
+            android:padding="8dp"
+            android:text="Pick discount"
+            android:textColor="#181725"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPromoCode"
+            app:layout_constraintEnd_toStartOf="@+id/ivSelectMethod"
+            app:layout_constraintStart_toEndOf="@+id/tvPromoCode"
+            app:layout_constraintTop_toTopOf="@+id/tvPromoCode" />
+
+        <ImageView
+            android:id="@+id/ivPromoCode"
+            android:layout_width="36dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPickDiscount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvPickDiscount" />
+
+        <TextView
+            android:id="@+id/tvTotalCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:text="Total Cost"
+            android:textColor="#7C7C7C"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvPromoCode"
+            app:layout_constraintTop_toBottomOf="@+id/tvPromoCode" />
+
+        <TextView
+            android:id="@+id/tvCost"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="end"
+            android:padding="8dp"
+            android:text="$13.97"
+            android:textColor="#181725"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTotalCost"
+            app:layout_constraintEnd_toStartOf="@+id/ivTotalCost"
+            app:layout_constraintStart_toEndOf="@+id/tvTotalCost"
+            app:layout_constraintTop_toTopOf="@+id/tvTotalCost" />
+
+        <ImageView
+            android:id="@+id/ivTotalCost"
+            android:layout_width="36dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCost"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvCost" />
+
+        <TextView
+            android:id="@+id/tvTerms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:text="By placing an order, you agree to our \nTerms and Conditions"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tvTotalCost"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalCost" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPlaceOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ob_button_bg"
+            android:text="Place Order"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTerms" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

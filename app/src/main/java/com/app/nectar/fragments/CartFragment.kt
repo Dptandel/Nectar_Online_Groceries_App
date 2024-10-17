@@ -1,16 +1,20 @@
 package com.app.nectar.fragments
 
 import android.os.Bundle
+import android.text.Html
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.nectar.R
 import com.app.nectar.adapters.CartItemAdapter
+import com.app.nectar.databinding.BottomSheetCheckoutBinding
 import com.app.nectar.databinding.FragmentCartBinding
 import com.app.nectar.models.CartItem
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class CartFragment : Fragment() {
 
@@ -34,9 +38,32 @@ class CartFragment : Fragment() {
 
         cartItemAdapter = CartItemAdapter(requireContext(), cartItemList)
 
-        binding.cartRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        binding.cartRecyclerView.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+        binding.cartRecyclerView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.cartRecyclerView.addItemDecoration(
+            DividerItemDecoration(
+                context,
+                DividerItemDecoration.VERTICAL
+            )
+        )
         binding.cartRecyclerView.adapter = cartItemAdapter
+
+        binding.btnGotoCheckout.setOnClickListener {
+            val dialogBinding = BottomSheetCheckoutBinding.inflate(layoutInflater)
+            val bottomSheetDialog = BottomSheetDialog(requireContext())
+            bottomSheetDialog.setContentView(dialogBinding.root)
+            (dialogBinding.root.parent as View).setBackgroundResource(R.drawable.bottom_sheet_bg)
+            dialogBinding.ivCancel.setOnClickListener {
+                bottomSheetDialog.dismiss()
+            }
+            dialogBinding.tvTerms.text =
+                Html.fromHtml("By placing an order, you agree to our <br><b>Terms</b> and <b>Conditions</b>")
+            dialogBinding.btnPlaceOrder.setOnClickListener {
+                Toast.makeText(context, "Order Placed", Toast.LENGTH_SHORT).show()
+                bottomSheetDialog.dismiss()
+            }
+            bottomSheetDialog.show()
+        }
 
         return binding.root
     }

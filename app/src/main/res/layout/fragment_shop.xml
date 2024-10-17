@@ -55,23 +55,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewpager"
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <me.relex.circleindicator.CircleIndicator
-                android:id="@+id/indicator"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:elevation="4dp"
-                android:background="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:layout_height="wrap_content"
+                android:src="@drawable/home_banner" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/parentRecyclerView"
